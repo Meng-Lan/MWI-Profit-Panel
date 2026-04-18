@@ -89,7 +89,7 @@ A: Market prices from in-game trade data, buff data from local game calculations
 
 ## 🔄 Changelog
 
-### 2025.04.18
+### 2026.04.18
 - Configured GitHub Actions for auto-building
 - Added English documentation
 - Optimized mobile adaptation

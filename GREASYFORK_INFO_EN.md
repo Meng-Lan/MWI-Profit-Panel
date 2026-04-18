@@ -89,16 +89,16 @@ A: Market prices from in-game trade data, buff data from local game calculations
 
 ## 🔄 Changelog
 
-### 2026.04.18
+### 2025.04.18
 - Configured GitHub Actions for auto-building
 - Added English documentation
 - Optimized mobile adaptation
 
-### 2024.06.18
+### 2025.06.18
 - Mobile adaptation
 - Added daily profit summary to drop records
 
-### 2024.06.16
+### 2025.06.16
 - Added base product profit data for 3 manufacturing types
 - Added tea processing support
 - Improved equipment/house buff calculations

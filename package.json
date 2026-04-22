@@ -1,6 +1,6 @@
 {
   "name": "mwi-profit-panel",
-  "version": "2026.04.18",
+  "version": "2026.04.23",
   "description": "MWI Profit Panel - MilkyWayIdle游戏收益面板插件",
   "main": "dist/MWI Profit Panel.user.js",
   "type": "module",

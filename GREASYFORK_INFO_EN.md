@@ -89,6 +89,9 @@ A: Market prices from in-game trade data, buff data from local game calculations
 
 ## 🔄 Changelog
 
+### 2026.04.23
+- Fixed minimum action time issue: game mechanics enforce a 3-second minimum action time, now reflected in profit calculations
+
 ### 2026.04.18
 - Configured GitHub Actions for auto-building
 - Added English documentation

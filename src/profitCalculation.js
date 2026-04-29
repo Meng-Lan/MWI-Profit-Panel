@@ -16,15 +16,17 @@ export default function ProfitCaculation(action, marketJson) {
 
     // 茶(饮品)效率和支出计算
     const teaBuffs = buffs.getTeaBuffs(action.type);
+    const drinkConcentration = globals.initCharacterData_noncombatStats?.drinkConcentration || 0;
+    const drinksPerHour = 12 * (1 + drinkConcentration);
     const drinksConsumedHourAskPrice = { ask: 0, bid: 0 };
     const drinksList = globals.initCharacterData_actionTypeDrinkSlotsMap[action.type];
     const drinkItems = [];
     for (const drink of drinksList) {
         if (!drink?.itemHrid) continue;
         const valuation = getItemValuation(drink.itemHrid, marketJson);
-        drinksConsumedHourAskPrice.ask += (valuation?.ask ?? 0) * 12;
-        drinksConsumedHourAskPrice.bid += (valuation?.bid ?? 0) * 12;
-        drinkItems.push({ ...valuation, name: getItemName(drink.itemHrid), countPerHour: 12 });
+        drinksConsumedHourAskPrice.ask += (valuation?.ask ?? 0) * drinksPerHour;
+        drinksConsumedHourAskPrice.bid += (valuation?.bid ?? 0) * drinksPerHour;
+        drinkItems.push({ ...valuation, name: getItemName(drink.itemHrid), countPerHour: drinksPerHour });
     }
     const communityBuff = buffs.getCommunityBuff(action.type);
     const achievementBuff = buffs.getAchievementBuff(action.type);

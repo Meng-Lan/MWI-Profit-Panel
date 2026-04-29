@@ -17,6 +17,7 @@ class GlobalState {
             initCharacterData_achievementActionTypeBuffsMap: {},
             initCharacterData_personalActionTypeBuffsMap: {},
             initCharacterData_mooPassActionTypeBuffsMap: {},
+            initCharacterData_noncombatStats: {},
             hasMarketItemUpdate: false,
             isZHInGameSetting: false,
             freshnessMarketJson: {},

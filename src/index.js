@@ -44,6 +44,7 @@ function handleMessage(message) {
                 globals.initCharacterData_achievementActionTypeBuffsMap = obj.achievementActionTypeBuffsMap;
                 globals.initCharacterData_personalActionTypeBuffsMap = obj.personalActionTypeBuffsMap;
                 globals.initCharacterData_mooPassActionTypeBuffsMap = obj.mooPassActionTypeBuffsMap;
+                globals.initCharacterData_noncombatStats = obj.noncombatStats;
                 waitForPannels();
             }
             else if (obj.type === "init_client_data") {

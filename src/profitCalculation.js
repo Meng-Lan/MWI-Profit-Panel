@@ -81,7 +81,8 @@ export default function ProfitCaculation(action, marketJson) {
 
     // 每小时动作数（包含工具缩减动作时间）
     const baseTimePerActionSec = action.baseTimeCost / 1000000000;
-    const actualTimePerActionSec = baseTimePerActionSec / (1 + equipmentBuff.action_speed / 100);
+    // 游戏机制：动作时间最低只能到3秒
+    const actualTimePerActionSec = Math.max(3, baseTimePerActionSec / (1 + equipmentBuff.action_speed / 100));
     const actionPerHour = 3600 / actualTimePerActionSec * (1 + totalEffBuff / 100);
 
     // 总 Wisdom Buff 计算（用于经验值）

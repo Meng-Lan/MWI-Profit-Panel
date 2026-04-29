@@ -83,8 +83,15 @@ export async function waitForPannels() {
         newPanel.className = 'TabPanel_tabPanel__tXMJF TabPanel_hidden__26UM3 income-panel';
         newPanel.innerHTML = `
             <div class="Inventory_inventory__17CH2 profit-pannel">
-            <h1 class="HousePanel_title__2fQ1U" style="width: fit-content; margin: 4px auto 8px; font-size: 18px; font-weight: 600;">
+            <h1 class="HousePanel_title__2fQ1U" style="position: relative; width: fit-content; margin: 4px auto 8px; font-size: 18px; font-weight: 600;">
                 <div>${t('生产收益详情', 'Production Profit Details')}</div>
+                <div class="HousePanel_guideTooltipContainer__1lAt1 profit-settings-btn" style="position: absolute; left: 100%; top: 0; margin-top: 1px; margin-left: 12px; cursor: pointer;">
+                    <div class="GuideTooltip_guideTooltip__1tVq-" style="cursor: pointer">
+                        <svg role="img" aria-label="Guide" class="Icon_icon__2LtL_" width="100%" height="100%">
+                            <use href="/static/media/misc_sprite.118a8ff2.svg#settings"></use>
+                        </svg>
+                    </div>
+                </div>
             </h1>
                 <div style="display: flex; align-items: center; justify-content: space-between; margin: 0 10px 8px; flex-wrap: wrap;">
                     <span style="color: green; font-size: 0.8em; margin-bottom: 4px;">${t('数据更新于', 'Data updated')}: ${formatDuration(Date.now() - globals.freshnessMarketJson.time * 1000)}</span>
@@ -162,6 +169,12 @@ function setupClickActions() {
                     labelRadio.checked = isSelected;
                 });
             }
+            return;
+        }
+
+        const settingsBtn = e.target.closest('.profit-settings-btn');
+        if (settingsBtn) {
+            unsafeWindow["MWIProfitPanel_showSettingsModal"]?.();
             return;
         }
 

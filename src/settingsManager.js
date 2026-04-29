@@ -59,7 +59,11 @@ export function initSettingsMenu() {
 }
 
 // 显示设置 Modal
-function showSettingsModal() {
+export function showSettingsModal() {
+    if (document.getElementById('mwi-profit-settings-overlay')) {
+        return;
+    }
+
     const settings = globals.profitSettings;
 
     // 创建遮罩层
@@ -311,3 +315,5 @@ function closeModal(overlay, dialog) {
         if (dialog.parentNode) dialog.remove();
     }, 200);
 }
+
+unsafeWindow["MWIProfitPanel_showSettingsModal"] = showSettingsModal;
